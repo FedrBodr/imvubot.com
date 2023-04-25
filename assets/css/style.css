@@ -1741,3 +1741,7 @@ h4.betterThen a {
   background-image: var(--bs-accordion-btn-active-icon);
   transform: var(--bs-accordion-btn-icon-transform);
 }
+
+.downloadContainer p.instructions {
+  font-size: 15px;
+}

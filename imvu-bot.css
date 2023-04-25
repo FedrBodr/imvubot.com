@@ -4395,3 +4395,12 @@ body {
     width: 788px !important;
     height: 443px !important;
 }
+
+
+.downloadContainer div.instructions {
+    font-size: 15px;
+}
+
+.downloadContainer div.instructions p{
+    font-size: 15px;
+}
