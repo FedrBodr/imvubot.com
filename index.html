@@ -62,7 +62,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9ffef3bec3.js" crossorigin="anonymous"></script>
-    <script src="jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
     <meta http-equiv="origin-trial"
           content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
@@ -98,13 +101,32 @@
      End Meta Pixel Code -->
     <!-- Facebook Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window,document,'script',
+        $(function () {
+            $( "#accordion" ).accordion({
+                collapsible: true
+            });
+            console.log("Accardeone inited")
+        });
+    </script>
+
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '242720648341842');
         fbq('track', 'PageView');
@@ -200,7 +222,7 @@
                 <h2 class="h3 mb-3">Get Imvu followers faster</h2>
                 <p class="lead text-black-50">ImvuBot is your premier way of getting more followers on Imvu. With thousands of new customers
                     you shop become a popular!</p>
-                <a href="#pricing" class="btn btn-primary my-3"
+                <a href="#download" class="btn btn-primary my-3"
                    onclick="ym(92055488,'reachGoal','getStartedNow'); fbq('trackCustom', 'getStartedNow'); return true;">Get Started Now</a>
             </div>
             <div class="col-lg-6 col-xl-4 mt-5 mt-lg-0">
@@ -376,28 +398,33 @@
                 <div>
                     <a class="my-3 btn btn-primary" href="assets/download/ImvuBot.dmg"
                        onclick="ym(92055488,'reachGoal','clickDownloadM11'); fbq('track', 'StartTrial', {value: '0.00', currency: 'USD', predicted_ltv: '0.00'}); return true;">
-                        Download MacOS version</a>
+                        Download MacOS version, try free</a>
                 </div>
-                <p class="lead text-black-50">Any installations questions write <a href="#footerContacts">to telegram or discord groups</a> and get 30% discount)
-                <div class="instructions"><h3>Installation instructions:</h3><br>
+                <p class="lead text-black-50">Any installations questions write <a href="#footerContacts">to telegram or discord groups</a> and get 30%
+                    discount)
+                <div class="instructions" id="accordion">
+                    <h3>Installation instructions (One click installer coming soon!):</h3>
+                    <div>
+                        <br>
 
-                    1 Open terminal<br>
-                    2 Install home brew, copy and run command to terminal:<br>
-                    <p style="background-color: #bbdcf5">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</p>
-                    At the end of install see terminal message and copy and run 2 commands<br>
-                    In your terminal will be you own commands
-                    <br>
-                    <p style="background-color: #a8aeb9">==> Next steps:<br>
-                        - Run these two commands in your terminal to add Homebrew to your PATH:<br>
-                        (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/fed/.zprofile<br>
-                        eval "$(/opt/homebrew/bin/brew shellenv)"<br>
-                    </p>
-                    3 Istall opencv <br>
-                    <p style="background-color: #bbdcf5">brew install opencv</p>
-                    4 Open ImvuBot.pkg and drag and drop ImvuBot.app to Applications folder <br>
-                    5 run in terminal command to allow tun app from Apple Unknown developers like me). change yourMacProfileName to you mac profile<br>
-                    <p style="background-color: #bbdcf5">xattr -cr /Users/yourMacProfileName/Desktop/ImvuBot.app </p><br>
-                    <p style="background-color: #c6f5bb">After it you can always run ImvuBot without any requirements</p>
+                        1 Open terminal<br>
+                        2 Install home brew, copy and run command to terminal:<br>
+                        <p style="background-color: #bbdcf5">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</p>
+                        At the end of install see terminal message and copy and run 2 commands<br>
+                        In your terminal will be you own commands
+                        <br>
+                        <p style="background-color: #a8aeb9">==> Next steps:<br>
+                            - Run these two commands in your terminal to add Homebrew to your PATH:<br>
+                            (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/fed/.zprofile<br>
+                            eval "$(/opt/homebrew/bin/brew shellenv)"<br>
+                        </p>
+                        3 Istall opencv <br>
+                        <p style="background-color: #bbdcf5">brew install opencv</p>
+                        4 Open ImvuBot.pkg and drag and drop ImvuBot.app to Applications folder <br>
+                        5 run in terminal command to allow tun app from Apple Unknown developers like me). change yourMacProfileName to you mac profile<br>
+                        <p style="background-color: #bbdcf5">xattr -cr /Users/yourMacProfileName/Desktop/ImvuBot.app </p><br>
+                        <p style="background-color: #c6f5bb">After it you can always run ImvuBot without any requirements</p>
+                    </div>
                 </div>
                 <br>
                 <br>
@@ -481,8 +508,8 @@
                     </div>
                     <div class="text-center">
                         <a href="#download" class="btn border"
-                                                onclick="ym(92055488,'reachGoal','clickDownloadOnPricing1'); fbq('trackCustom', 'clickDownloadOnPricing1'); return true;">
-                        Try for free</a>
+                           onclick="ym(92055488,'reachGoal','clickDownloadOnPricing1'); fbq('trackCustom', 'clickDownloadOnPricing1'); return true;">
+                            Try for free</a>
                     </div>
 
                 </div>
@@ -983,7 +1010,8 @@
                        onclick="ym(92055488,'reachGoal','clickDownloadM12'); fbq('track', 'StartTrial', {value: '0.00', currency: 'USD', predicted_ltv: '0.00'}); return true;">
                         Download MacOS version</a>
                 </div>
-                <p class="lead text-black-50">Any installations questions write <a href="#footerContacts">to telegram or discord groups</a> and get 30% discount)
+                <p class="lead text-black-50">Any installations questions write <a href="#footerContacts">to telegram or discord groups</a> and get 30%
+                    discount)
                 <div class="instructions"><h3>Installation instructions:</h3><br>
 
                     1 Open terminal<br>
